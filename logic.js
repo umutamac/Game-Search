@@ -23,7 +23,7 @@ $("#searchDealsButton").on("click", function (event) {
     }
     //var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     var searchTerm = $("#userGame").val();
-    var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&pageSize=5"
+    var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&lowerPrice=5&pageSize=5"
     $.ajax({
         url: queryURL2,
         method: "GET"
@@ -100,8 +100,8 @@ $("button").click( function(event){ // when a button is clicked...
     if($("#userGame").val()==""){ // if search input is empty, dont do anything
         return;
     }
-    console.log(searchTerm);
-    searchArray.push(searchTerm); //add the latest search to the array
+    console.log($("#userGame").val());
+    searchArray.push( $("#userGame").val() ); //add the latest search to the array
     saveSearch(); //put the array into storage
     displayPastSearches (); //put the updated array contents into elements to be displayed
 });
