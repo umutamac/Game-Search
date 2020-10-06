@@ -3,8 +3,8 @@ $("#searchReviewsButton").on("click", function(event){
     event.preventDefault();
 
     var searchTerm = $("#userGame").val();
-    var queryURL = "URL: http://www.gamespot.com/api/reviews/?api_key=" + apiKeyGameSpot + "";
     var apiKeyGameSpot = "1c94492f4e0d712037278223f041224bd213fadd";
+    var queryURL = "https://www.gamespot.com/api/reviews/?api_key=" + apiKeyGameSpot;
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -21,7 +21,7 @@ $("#searchDealsButton").on("click", function (event) {
     }
     //var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     var searchTerm = $("#userGame").val();
-    var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&pageSize=5"
+    var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&pageSize=5"
     $.ajax({
         url: queryURL2,
         method: "GET"
@@ -29,6 +29,11 @@ $("#searchDealsButton").on("click", function (event) {
         console.log(searchTerm);
         console.log(response2);
         $("#deals").append(response2[0].title);
+        $("#deals").append($("<div class=salePrice>")).append("$" + response2[0].salePrice)
+        $("#deals").append("<div class=img>").append($("<img>"));
+        $("img").attr("src", response2[0].thumb)
+        $("#deals").append($("<div class=img>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[0].dealID)));
+        $(".site").text("link to deal");
         $("#userGame").val("");
     })
 });
