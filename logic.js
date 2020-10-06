@@ -1,3 +1,5 @@
+var searchTerm = $("#userGame").val();
+
 $("#searchReviewsButton").on("click", function(event){
     event.preventDefault();
     var searchTerm = $("#userGame").val();
@@ -7,9 +9,10 @@ $("#searchReviewsButton").on("click", function(event){
 
 $("#searchDealsButton").on("click", function (event) {
     event.preventDefault();
-    var searchTerm = $("#userGame").val();
+    saveSearch(searchTerm);
+
+    //var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&pageSize=5"
-    // "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     $.ajax({
         url: queryURL2,
         method: "GET"
@@ -31,8 +34,9 @@ localStorage.setItem('gamesKey', JSON.stringify(searchArray))
 var storedData = JSON.parse(localStorage.getItem('gamesKey'))
 
 
-function saveSearch() {
+function saveSearch(searchTerm) {
+    console.log(searchTerm);
     searchArray.push(searchTerm);
     localStorage.setItem('gamesKey', JSON.stringify(searchArray))
-    input.value = "";
 }
+
