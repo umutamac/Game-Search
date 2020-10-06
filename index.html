@@ -16,10 +16,10 @@
         <h2 style="text-align: center;">Welcome to the place where you can look up game ratings and deals for the games</h2>
     </header>
     <div class="container">
-        <form>
-            <label for="game-search">Search a Game:</label>
-            <input type="text" name="game-search" id="game-search-input">
-            <button></button>
+        <form action="">
+            <label for="userGame"></label>
+            <input type="text" name="userGame" id="userGame" placeholder="search for a game">
+            <button id="searchButton">Search</button>
         </form>
 
         <div class="reviews">
@@ -36,26 +36,6 @@
 
 
     </div>
-
-    <script>
-      var gameSearchInput = $('#game-search-input').val();
-
-      let searchArray = localStorage.getItem('gamesKey')
-        ? JSON.parse(localStorage.getItem('gamesKey'))
-        : []
-
-      localStorage.setItem('gamesKey', JSON.stringify(searchArray))
-      const data = JSON.parse(localStorage.getItem('gamesKey'))
-
-
-      $("form").submit( function(event) {
-        event.preventDefault()
-
-        itemsArray.push(input.value);
-        localStorage.setItem('gamesKey', JSON.stringify(searchArray))
-        input.value = "";
-      })
-    </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
