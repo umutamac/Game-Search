@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,38 +10,48 @@
     <!-- more styling libraries to come-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="styling/style.css">
+    <style>
+        body {
+            background-image: url(./styling/icons.jpg);
+            background-color: #cccccc;
+            background-repeat: repeat;
+            background-size: 400px;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
+    <div class="container light-blue lighten-3">
         <h1 style="text-align: center;">Game Search Engine</h1>
-        <h2 style="text-align: center;">Welcome to the place where you can look up game ratings and deals for the games</h2>
-    </header>
-    <div class="container">
-        <form action="">
-            <label for=""></label>
-            <input type="text" name="" id="userGame" placeholder="search for a game">
-            <button id="searchReviewsButton">Search for Reviews</button>
-        </form>
+        <h2 style="text-align: center;">Welcome to the place where you can look up game ratings and deals for the games
+        </h2>
+        <div class="container">
+            <form action="">
+                <label for=""></label>
+                <input type="text" name="" id="userGame" placeholder="search for a game">
+                <button id="searchReviewsButton">Search for Reviews</button>
+            </form>
 
-        <div class="reviews">
+            <div class="reviews">
+
+            </div>
+            <br>
+            <button id="searchDealsButton">Search for Deals</button>
+
+
+
+
+
+            <div id="deals" class="deals">
+
+            </div>
+
 
         </div>
-        <br>
-        <button id="searchDealsButton">Search for Deals</button>
-
-
-
-
-
-        <div id="deals" class="deals">
-
-        </div>
-
-
     </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="logic.js"></script>
 </body>
+
 </html>
