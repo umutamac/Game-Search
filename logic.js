@@ -8,6 +8,7 @@ $("#searchButton").on("click", function (event) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+        console.log("cheapshark response:");
         console.log(response);
         // $("#userGame").text("");
     })
@@ -27,6 +28,6 @@ var storedData = JSON.parse(localStorage.getItem('gamesKey'))
 function saveSearch() {
     searchArray.push(searchTerm);
     localStorage.setItem('gamesKey', JSON.stringify(searchArray))
-    input.value = "";
+    searchTerm.value = "";
 }
 
