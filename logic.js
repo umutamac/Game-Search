@@ -1,5 +1,8 @@
 $("#searchReviewsButton").on("click", function(event){
     event.preventDefault();
+    var searchTerm = $("#userGame").val();
+    var queryURL = "http://www.gamespot.com/api/games/?api_key=" + apiKeyGameSpot;
+    var apiKeyGameSpot = "1c94492f4e0d712037278223f041224bd213fadd";
 });
 
 $("#searchDealsButton").on("click", function (event) {
