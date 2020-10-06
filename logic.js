@@ -66,8 +66,8 @@ $("button").click( function(event){ // when a button is clicked...
     if($("#userGame").val()==""){ // if search input is empty, dont do anything
         return;
     }
-    console.log(searchTerm);
-    searchArray.push(searchTerm); //add the latest search to the array
+    console.log($("#userGame").val());
+    searchArray.push( $("#userGame").val() ); //add the latest search to the array
     saveSearch(); //put the array into storage
     displayPastSearches (); //put the updated array contents into elements to be displayed
 });
