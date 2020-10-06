@@ -1,0 +1,14 @@
+.container {
+    min-height: 300px;
+    max-width: 60%;
+}
+
+
+
+
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}

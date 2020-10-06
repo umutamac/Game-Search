@@ -23,7 +23,7 @@ $("#searchDealsButton").on("click", function (event) {
     }
     //var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     var searchTerm = $("#userGame").val();
-    var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&pageSize=5"
+    var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&lowerPrice=5&pageSize=5"
     $.ajax({
         url: queryURL2,
         method: "GET"
