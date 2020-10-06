@@ -29,3 +29,4 @@ function saveSearch() {
     localStorage.setItem('gamesKey', JSON.stringify(searchArray))
     input.value = "";
 }
+
