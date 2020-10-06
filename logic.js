@@ -16,3 +16,20 @@ $("#searchDealsButton").on("click", function (event) {
         $("#deals").append(response2[0].title);
     })
 })
+
+
+//--------------------------------- Local Storage
+let searchArray = localStorage.getItem('gamesKey')
+? JSON.parse(localStorage.getItem('gamesKey'))
+: [];
+
+
+localStorage.setItem('gamesKey', JSON.stringify(searchArray))
+var storedData = JSON.parse(localStorage.getItem('gamesKey'))
+
+
+function saveSearch() {
+    searchArray.push(searchTerm);
+    localStorage.setItem('gamesKey', JSON.stringify(searchArray))
+    input.value = "";
+}
