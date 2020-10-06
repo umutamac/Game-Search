@@ -1,7 +1,9 @@
 var searchTerm = $("#userGame").val();
 $("#searchReviewsButton").on("click", function(event){
     event.preventDefault();
-
+    if($("#userGame").val() == ""){ // if search input is empty, dont do anything
+        return;
+    }
     var searchTerm = $("#userGame").val();
     var apiKeyGameSpot = "1c94492f4e0d712037278223f041224bd213fadd";
     var queryURL = "https://www.gamespot.com/api/reviews/?api_key=" + apiKeyGameSpot;
@@ -15,7 +17,6 @@ $("#searchReviewsButton").on("click", function(event){
 
 $("#searchDealsButton").on("click", function (event) {
     event.preventDefault();
-    saveSearch( $("#userGame").val() ); // Store the user input
     if($("#userGame").val() == ""){ // if search input is empty, dont do anything
         return;
     }
