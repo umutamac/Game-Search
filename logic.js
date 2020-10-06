@@ -2,7 +2,7 @@ var searchTerm = $("#userGame").val(); // user input to search bar
 
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
-    saveSearch();
+    saveSearch(searchTerm);
     var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     $.ajax({
         url: queryURL,
@@ -25,9 +25,9 @@ localStorage.setItem('gamesKey', JSON.stringify(searchArray))
 var storedData = JSON.parse(localStorage.getItem('gamesKey'))
 
 
-function saveSearch() {
+function saveSearch(searchTerm) {
+    console.log(searchTerm);
     searchArray.push(searchTerm);
     localStorage.setItem('gamesKey', JSON.stringify(searchArray))
-    searchTerm.value = "";
 }
 
