@@ -35,18 +35,40 @@ $("#searchDealsButton").on("click", function (event) {
 
 
 // --------------------------------- Local Storage
-let searchArray = localStorage.getItem('gamesKey')
-? JSON.parse(localStorage.getItem('gamesKey'))
-: [];
-
-
-localStorage.setItem('gamesKey', JSON.stringify(searchArray))
-var storedData = JSON.parse(localStorage.getItem('gamesKey'))
-
-
-function saveSearch(searchTerm) {
-    console.log(searchTerm);
-    searchArray.push(searchTerm);
-    localStorage.setItem('gamesKey', JSON.stringify(searchArray))
+function saveSearch() {
+    localStorage.setItem('gamesKey', JSON.stringify(searchArray)) //save the array into local storage
 }
+function displayPastSearches (){
+    //clear the existing text
+    //create new element to contain the new text
+    //
+}
+function init(){
+    var searchArray = [];
+    var storedData = JSON.parse(localStorage.getItem('gamesKey'))
+    if (storedData !== null) { //if localstorage in not empty, 
+        searchArray = storedData; //make the array equal to storage
+    }
+    displayPastSearches ();
+}
+
+init(); //initialize by putting the stuff in local storage into an array
+// and displaying the contents of the array
+
+$("button").click( function(event){ // when a button is clicked...
+    event.preventDefault(); // do not refresh
+    if($("#userGame").val()==""){ // if search input is empty, dont do anything
+        return;
+    }
+    console.log(searchTerm);
+    searchArray.push(searchTerm); //add the latest search to the array
+    saveSearch(); //put the array into storage
+    displayPastSearches (); //put the updated array contents into elements to be displayed
+});
+
+
+
+
+
+
 
