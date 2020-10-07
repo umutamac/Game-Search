@@ -37,7 +37,7 @@ $("#searchReviewsButton").on("click", function(event){
     saveToArray();
     var searchTerm = $("#userGame").val();
     var apiKeyGiantBomb = "70096e40d8eb37e5de61445e8ef17ead73363d5e";
-    var queryURL = "https://www.giantbomb.com/api/search/?api_key=" + apiKeyGiantBomb + "&format=json&query=\"" + searchTerm + "\"&resources=game" + apiKeyGiantBomb;
+    var queryURL = "https://www.giantbomb.com/api/search/?api_key=" + apiKeyGiantBomb + "&format=json&query=" + searchTerm + "&resources=game";
     $.ajax({
         url: queryURL,
         method: "GET"
