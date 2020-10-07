@@ -1,4 +1,5 @@
 var searchTerm = $("#userGame").val();
+
 $("#searchReviewsButton").on("click", function(event){
     event.preventDefault();
     if($("#userGame").val() == ""){ // if search input is empty, dont do anything
@@ -45,7 +46,7 @@ $("#searchDealsButton").on("click", function (event) {
 
 
 // --------------------------------- Local Storage
-function saveSearch() {
+function saveSearchToLS() {
     localStorage.setItem('gamesKey', JSON.stringify(searchArray)) //save the array into local storage
 }
 function displayPastSearches (){
@@ -64,17 +65,11 @@ function init(){
 
 init(); //initialize by putting the stuff in local storage into an array
 // and displaying the contents of the array
-
-$("button").click( function(event){ // when a button is clicked...
-    event.preventDefault(); // do not refresh
-    if($("#userGame").val()==""){ // if search input is empty, dont do anything
-        return;
-    }
-    console.log($("#userGame").val());
+function saveToArray(){
     searchArray.push( $("#userGame").val() ); //add the latest search to the array
-    saveSearch(); //put the array into storage
+    saveSearchToLS(); //put the array into storage
     displayPastSearches (); //put the updated array contents into elements to be displayed
-});
+}
 
 
 
