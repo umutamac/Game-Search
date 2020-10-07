@@ -34,7 +34,7 @@ $("#searchReviewsButton").on("click", function(event){
     if($("#userGame").val() == ""){ // if search input is empty, dont do anything
         return;
     }
-    //saveToArray();
+    saveToArray();
     var searchTerm = $("#userGame").val();
     var apiKeyGiantBomb = "70096e40d8eb37e5de61445e8ef17ead73363d5e";
     var queryURL = "https://www.gamespot.com/api/reviews/?api_key=" + apiKeyGiantBomb;
@@ -44,6 +44,7 @@ $("#searchReviewsButton").on("click", function(event){
     }).then(function(response){
         console.log(response);
     })
+    $("#userGame").val("");
 });
 
 $("#searchDealsButton").on("click", function (event) {
@@ -52,7 +53,7 @@ $("#searchDealsButton").on("click", function (event) {
     if($("#userGame").val() == ""){ // if search input is empty, dont do anything
         return;
     }
-    //saveToArray();
+    saveToArray();
     //var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
     var searchTerm = $("#userGame").val();
     var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&lowerPrice=5&pageSize=5"
