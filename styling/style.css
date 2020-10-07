@@ -12,3 +12,7 @@ footer{
     font-weight: bold;
     color: black;
 }
+
+.gamePic {
+    width: 200px;
+}
