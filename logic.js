@@ -5,9 +5,17 @@ function saveSearchToLS() {
     localStorage.setItem('gamesKey', JSON.stringify(searchArray)) //save the array into local storage
 }
 function displayPastSearches() {
-    //clear the existing text
-    //create new element to contain the new text
-    //
+    
+    
+    $(".asd").empty();//clear the existing text
+    for (var i=0;i<searchArray.length;i++) { 
+        var seacrhArrayElement = searchArray[i];
+
+        var li = document.createElement("li");// Creaete a new li for each past search
+        li.textContent = seacrhArrayElement; //set the text of li to array element
+        li.setAttribute("data-index", i);
+        $(".asd").append(li); // append a new li for each past search
+    }
 }
 function init() {
     var storedData = JSON.parse(localStorage.getItem('gamesKey'))
