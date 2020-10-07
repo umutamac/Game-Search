@@ -30,46 +30,16 @@ $("#searchDealsButton").on("click", function (event) {
     }).then(function (response2) {
         console.log(searchTerm);
         console.log(response2);
-        //first result
-        $("#deals").append(response2[0].title);
-        $("#deals").append($("<div class=salePrice>")).append("$" + response2[0].salePrice)
-        $("#deals").append("<div class=img>").append($("<img>"));
-        $("img").attr("src", response2[0].thumb)
-        $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[0].dealID)));
-        $(".site").text("link to deal");
-        $("#userGame").val("");
-        //second result
-        $("#deals").append(response2[1].title);
-        $("#deals").append($("<div class=salePrice>")).append("$" + response2[1].salePrice)
-        $("#deals").append("<div class=img>").append($("<img>"));
-        $("img").attr("src", response2[1].thumb)
-        $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[1].dealID)));
-        $(".site").text("link to deal");
-        $("#userGame").val("");
-        //third result
-        $("#deals").append(response2[2].title);
-        $("#deals").append($("<div class=salePrice>")).append("$" + response2[2].salePrice)
-        $("#deals").append("<div class=img>").append($("<img>"));
-        $("img").attr("src", response2[2].thumb)
-        $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[2].dealID)));
-        $(".site").text("link to deal");
-        $("#userGame").val("");
-        //fourth result
-        $("#deals").append(response2[3].title);
-        $("#deals").append($("<div class=salePrice>")).append("$" + response2[3].salePrice)
-        $("#deals").append("<div class=img>").append($("<img>"));
-        $("img").attr("src", response2[3].thumb)
-        $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[3].dealID)));
-        $(".site").text("link to deal");
-        $("#userGame").val("");
-        //fifth result
-        $("#deals").append(response2[4].title);
-        $("#deals").append($("<div class=salePrice>")).append("$" + response2[4].salePrice)
-        $("#deals").append("<div class=img>").append($("<img>"));
-        $("img").attr("src", response2[4].thumb)
-        $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[4].dealID)));
-        $(".site").text("link to deal");
-        $("#userGame").val("");
+        //--- for loop to replace the generating and displaying deals
+        for(i=0;i<5;i++){
+            $("#deals").append(response2[i].title);
+            $("#deals").append($("<div class=salePrice>")).append("$" + response2[i].salePrice)
+            $("#deals").append("<div class=img>").append($("<img>"));
+            $("img").attr("src", response2[i].thumb)
+            $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[i].dealID)));
+            $(".site").text("link to deal");
+            $("#userGame").val("");
+        }
     })
 });
 
