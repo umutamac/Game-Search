@@ -4,22 +4,22 @@ var searchArray = [];
 function saveSearchToLS() {
     localStorage.setItem('gamesKey', JSON.stringify(searchArray)) //save the array into local storage
 }
-function displayPastSearches (){
+function displayPastSearches() {
     //clear the existing text
     //create new element to contain the new text
     //
 }
-function init(){
+function init() {
     var storedData = JSON.parse(localStorage.getItem('gamesKey'))
     if (storedData !== null) { //if localstorage in not empty, 
         searchArray = storedData; //make the array equal to storage
     }
-    displayPastSearches ();
+    displayPastSearches();
 }
-function saveToArray(){
-    searchArray.push( $("#userGame").val() ); //add the latest search to the array
+function saveToArray() {
+    searchArray.push($("#userGame").val()); //add the latest search to the array
     saveSearchToLS(); //put the array into storage
-    displayPastSearches (); //put the updated array contents into elements to be displayed
+    displayPastSearches(); //put the updated array contents into elements to be displayed
 }
 //init(); //initialize by putting the stuff in local storage into an array
 // and displaying the contents of the array
@@ -29,28 +29,33 @@ function saveToArray(){
 
 
 //---------------------- ajax calls
-$("#searchReviewsButton").on("click", function(event){
+$("#searchReviewsButton").on("click", function (event) {
     event.preventDefault();
-    if($("#userGame").val() == ""){ // if search input is empty, dont do anything
+    if ($("#userGame").val() == "") { // if search input is empty, dont do anything
         return;
     }
     saveToArray();
     var searchTerm = $("#userGame").val();
-    var apiKeyGiantBomb = "70096e40d8eb37e5de61445e8ef17ead73363d5e";
-    var queryURL = "https://www.giantbomb.com/api/search/?api_key=" + apiKeyGiantBomb + "&format=json&query=" + searchTerm + "&resources=game";
+    var queryURL = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&pageSize=10&exact=0";
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
         console.log(response);
+        for (var i = 0; i < response.length; i++) {
+            console.log(response[i].title);
+            console.log("Metacritic Score (out of 100): " + response[i].metacriticScore);
+            console.log("Steam Score (out of 100): " + response[i].steamRatingPercent + " (" + response[i].steamRatingText + ")");
+            console.log("---------------------------");
+        }
     })
-    $("#userGame").val("");
 });
 
 $("#searchDealsButton").on("click", function (event) {
     $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
+    $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
     event.preventDefault();
-    if($("#userGame").val() == ""){ // if search input is empty, dont do anything
+    if ($("#userGame").val() == "") { // if search input is empty, dont do anything
         return;
     }
     saveToArray();
@@ -63,22 +68,22 @@ $("#searchDealsButton").on("click", function (event) {
     }).then(function (response2) {
         console.log(searchTerm);
         console.log(response2);
-        for(i=0;i<5;i++){ //--- for loop to replace the generating and displaying deals
-            $("#deals").append( $("<div>").addClass("col s12 m7 card"+[i]) );
+        for (i = 0; i < 5; i++) { //--- for loop to replace the generating and displaying deals
+            $("#deals").append($("<div>").addClass("col s12 m7 card" + [i]));
             //$(".card"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
-            $(".card"+[i]).append($("<div>").addClass("card horizontal"));
+            $(".card" + [i]).append($("<div>").addClass("card horizontal"));
 
-            $(".card"+[i]+" .card.horizontal").prepend($("<div>").addClass("card-image"));
-            $(".card"+[i]+" .card-image").prepend($("<img>").attr("src",response2[i].thumb));
+            $(".card" + [i] + " .card.horizontal").prepend($("<div>").addClass("card-image"));
+            $(".card" + [i] + " .card-image").prepend($("<img>").attr("src", response2[i].thumb));
 
-            $(".card"+[i]+" .card.horizontal").append($("<div>").addClass("card-stacked"));
+            $(".card" + [i] + " .card.horizontal").append($("<div>").addClass("card-stacked"));
 
-            $(".card"+[i]+" .card-stacked").prepend($("<div>").addClass("card-content"));
-            $(".card"+[i]+" .card-content").prepend($("<p>").text(response2[i].title));
-            $(".card"+[i]+" .card-content").append($("<p class=salePrice>").text("$"+response2[i].salePrice));
+            $(".card" + [i] + " .card-stacked").prepend($("<div>").addClass("card-content"));
+            $(".card" + [i] + " .card-content").prepend($("<p>").text(response2[i].title));
+            $(".card" + [i] + " .card-content").append($("<p class=salePrice>").text("$" + response2[i].salePrice));
 
-            $(".card"+[i]+" .card-stacked").append($("<div>").addClass("card-action"));
-            $(".card"+[i]+" .card-action").append($("<a target=_blank>").text("Go to the Deal").attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[i].dealID));
+            $(".card" + [i] + " .card-stacked").append($("<div>").addClass("card-action"));
+            $(".card" + [i] + " .card-action").append($("<a target=_blank>").text("Go to the Deal").attr("href", "https://www.cheapshark.com/redirect?dealID=" + response2[i].dealID));
 
             // $("#deals").append(response2[i].title);
             // $("#deals").append($("<div class=salePrice>")).append("$" + response2[i].salePrice)
