@@ -69,7 +69,7 @@ $("#searchDealsButton").on("click", function (event) {
             $(".card"+[i]).append($("<div>").addClass("card horizontal"));
 
             $(".card"+[i]+" .card.horizontal").prepend($("<div>").addClass("card-image"));
-            $(".card"+[i]+" .card-image").prepend($("<img>").attr("src",response2[i].thumb));
+            $(".card"+[i]+" .card-image").prepend($("<img>").addClass("dealPic").attr("src",response2[i].thumb));
 
             $(".card"+[i]+" .card.horizontal").append($("<div>").addClass("card-stacked"));
 
