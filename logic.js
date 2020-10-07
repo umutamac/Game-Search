@@ -36,8 +36,8 @@ $("#searchReviewsButton").on("click", function(event){
     }
     saveToArray();
     var searchTerm = $("#userGame").val();
-    var apiKeyGameSpot = "1c94492f4e0d712037278223f041224bd213fadd";
-    var queryURL = "https://www.gamespot.com/api/reviews/?api_key=" + apiKeyGameSpot;
+    var apiKeyGiantBomb = "70096e40d8eb37e5de61445e8ef17ead73363d5e";
+    var queryURL = "https://www.gamespot.com/api/reviews/?api_key=" + apiKeyGiantBomb;
     $.ajax({
         url: queryURL,
         method: "GET"
