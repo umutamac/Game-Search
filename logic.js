@@ -34,8 +34,7 @@ $("#searchDealsButton").on("click", function (event) {
         for(i=0;i<5;i++){
             $("#deals").append(response2[i].title);
             $("#deals").append($("<div class=salePrice>")).append("$" + response2[i].salePrice)
-            $("#deals").append("<div class=img>").append($("<img>"));
-            $("img").attr("src", response2[i].thumb)
+            $("#deals").append("<div class=img>").append($("<img>").attr("src", response2[i].thumb));
             $("#deals").append($("<div class=a>").append(($("<a target=_blank class=site>")).attr("href", "https://www.cheapshark.com/redirect?dealID="+response2[i].dealID)));
             $(".site").text("link to deal");
             $("#userGame").val("");
