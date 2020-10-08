@@ -108,6 +108,13 @@ $(document).ready(function () {
 
                 $("#userGame").val("");
             }
+            var queryURLbeer = "https://prost.herokuapp.com/api/v1/beer/rand"
+                $.ajax({
+                    url: queryURLbeer,
+                    method: "GET"
+                }).then(function(responseBeer){
+                    console.log(responseBeer);
+                });
         })
     });
 
