@@ -10,16 +10,7 @@ $(document).ready(function () {
         $("#searchList").empty();//clear the existing text
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
-<<<<<<< HEAD
-            var li = $("<li>")
-            li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
-            $("#searchList").append(li)
-            li.click( ()=>{
-                ReviewBtn(li.target.text);
-            });
-=======
             $("#searchList").append($("<li>").attr("data-index", i).text(seacrhArrayElement));// Creaete a new li for each past search
->>>>>>> a226106ff21800ff89c2087c737f26f07ef38eee
         }
     }
     function init() {
@@ -34,13 +25,15 @@ $(document).ready(function () {
         saveSearchToLS(); //put the array into storage
         displayPastSearches(); //put the updated array contents into elements to be displayed
     }
-
     init(); //initialize by putting the stuff in local storage into an array
     // and displaying the contents of the array
 
 
+
+
+
     //---------------------- ajax calls
-    function ReviewBtn(event) {
+    $("#searchReviewsButton").on("click", function (event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
         $("#drinkInfo").empty(); // empties drinks div
@@ -73,9 +66,9 @@ $(document).ready(function () {
                 $(".cardReviews" + [i] + " .card-content").append($("<p>").text("Metacritic Score (out of 100): " + response[i].metacriticScore));
             }
         })
-    }
+    });
 
-    function DealsBtn(event) {
+    $("#searchDealsButton").on("click", function (event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
         event.preventDefault();
@@ -92,7 +85,7 @@ $(document).ready(function () {
         }).then(function (response2) {
             console.log(searchTerm);
             console.log(response2);
-            for (i = 0; i < 5; i++) { //--- for loop to replace the generating and displaying deals
+            for (i = 0; i < response2.length; i++) { //--- for loop to replace the generating and displaying deals
                 $("#deals").append($("<div>").addClass("col s12 m7 card" + [i]));
                 //$(".card"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
                 $(".card" + [i]).append($("<div>").addClass("card horizontal"));
@@ -127,16 +120,6 @@ $(document).ready(function () {
                 $("#cocktailImage").attr("style", "width:100%;")
             });
         })
-    }
-    $("#searchReviewsButton").click( ReviewBtn() );
-    $("#searchDealsButton").click( DealsBtn() );
+    });
+
 });
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
->>>>>>> a226106ff21800ff89c2087c737f26f07ef38eee
