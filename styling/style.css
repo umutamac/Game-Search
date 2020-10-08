@@ -24,6 +24,11 @@ h1, h2 {
 .btns {
     text-align: center;
 }
+input{
+    background-color: bisque;
+    border: black;
+    border-style: dashed;
+}
 footer {
     text-align: center;
     font-weight: bold;
