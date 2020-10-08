@@ -11,11 +11,11 @@ $(document).ready(function () {
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
             var li = $("<li>")
-            li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
+            li.attr("data-index", i).text(seacrhArrayElement) );// Creaete a new li for each past search
             $("#searchList").append(li)
-            // li.click( (li)=>{   // make the list items clickable so that a search is made with the same input
-            //     ReviewBtn(li.target.text);
-            // });
+            // a.click((anchor)=>{
+            //     searchForCity(anchor.target.text)
+            // })
         }
     }
     function init() {
@@ -30,13 +30,15 @@ $(document).ready(function () {
         saveSearchToLS(); //put the array into storage
         displayPastSearches(); //put the updated array contents into elements to be displayed
     }
-
     init(); //initialize by putting the stuff in local storage into an array
     // and displaying the contents of the array
 
 
+
+
+
     //---------------------- ajax calls
-    function ReviewBtn(event) {
+    $("#searchReviewsButton").on("click", function (event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
         $("#drinkInfo").empty(); // empties drinks div
@@ -69,9 +71,9 @@ $(document).ready(function () {
                 $(".cardReviews" + [i] + " .card-content").append($("<p>").text("Metacritic Score (out of 100): " + response[i].metacriticScore));
             }
         })
-    }
+    });
 
-    function DealsBtn(event) {
+    $("#searchDealsButton").on("click", function (event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
         event.preventDefault();
@@ -108,22 +110,29 @@ $(document).ready(function () {
                 $("#userGame").val("");
             }
             var queryURLbeer = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-            $.ajax({
-                url: queryURLbeer,
-                method: "GET"
-            }).then(function (responseBeer) {
-                console.log(responseBeer);
-                console.log("Cocktail Name: " + responseBeer.drinks[0].strDrink);
-                console.log(responseBeer.drinks[0].strDrinkThumb);
-                $("#drinkInfo").append($("<div id=tryCocktail>"));
-                $("#tryCocktail").append($("<h5>").text("Try a cocktail with your game!"));
-                $("#drinkInfo").append("Cocktail Name: " + responseBeer.drinks[0].strDrink);
-                $("#drinkInfo").append("<img id=cocktailImage>");
-                $("#cocktailImage").attr("src", responseBeer.drinks[0].strDrinkThumb)
-                $("#cocktailImage").attr("style", "width:100%;")
-            });
+                $.ajax({
+                    url: queryURLbeer,
+                    method: "GET"
+                }).then(function(responseBeer){
+                    console.log(responseBeer);
+                    console.log("Cocktail Name: " + responseBeer.drinks[0].strDrink);
+                    console.log(responseBeer.drinks[0].strDrinkThumb);
+                    $("#drinkInfo").append($("<div id=tryCocktail>"));
+                    $("#tryCocktail").append($("<h5>").text("Try a cocktail with your game!"));
+                    $("#drinkInfo").append("Cocktail Name: " + responseBeer.drinks[0].strDrink);
+                    $("#drinkInfo").append("<img id=cocktailImage>");
+                    $("#cocktailImage").attr("src", responseBeer.drinks[0].strDrinkThumb)
+                    $("#cocktailImage").attr("style", "width:100%;")
+                });
         })
-    }
-    $("#searchReviewsButton").click( ReviewBtn() );
-    $("#searchDealsButton").click( DealsBtn() );
+    });
+
 });
+
+
+
+
+
+
+
+
