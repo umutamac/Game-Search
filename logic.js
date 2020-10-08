@@ -7,16 +7,10 @@ $(document).ready(function () {
         localStorage.setItem('gamesKey', JSON.stringify(searchArray)) //save the array into local storage
     }
     function displayPastSearches() {
-
-
-        $(".asd").empty();//clear the existing text
-        for (var i = 0; i < searchArray.length; i++) {
+        $("#searchList").empty();//clear the existing text
+        for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
-
-            var li = document.createElement("li");// Creaete a new li for each past search
-            li.textContent = seacrhArrayElement; //set the text of li to array element
-            li.setAttribute("data-index", i);
-            $(".asd").append(li); // append a new li for each past search
+            $("#searchList").append( $("<li>").attr("data-index", i).text(seacrhArrayElement) );// Creaete a new li for each past search
         }
     }
     function init() {
@@ -27,7 +21,7 @@ $(document).ready(function () {
         displayPastSearches();
     }
     function saveToArray() {
-        searchArray.push($("#userGame").val()); //add the latest search to the array
+        searchArray.unshift($("#userGame").val()); //add the latest search to the array
         saveSearchToLS(); //put the array into storage
         displayPastSearches(); //put the updated array contents into elements to be displayed
     }

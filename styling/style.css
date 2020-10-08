@@ -24,7 +24,6 @@ h1, h2 {
 .btnsDiv {
     text-align: center;
 }
-
 #userGame {
     background-color: rgb(255, 255, 255);
     border: black;
@@ -36,11 +35,14 @@ footer {
     font-weight: bold;
     color: black;
 }
+.past-searches {
+    background-color: darkgray;
+    text-align: center;
+}
 /* .dealPic {
     height: 100%;
     width: auto;
 } */
-
 
 @media screen and (max-width: 650px) {
     .btn{
@@ -48,7 +50,6 @@ footer {
         padding-right: 5px;
     }
 }
-
 /*Not changing the UI for devices like iPad or Surface Duo, only for phones*/
 @media screen and (max-width: 420px) {
     h1 {
