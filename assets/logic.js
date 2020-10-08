@@ -10,7 +10,12 @@ $(document).ready(function () {
         $("#searchList").empty();//clear the existing text
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
-            $("#searchList").append( $("<li>").attr("data-index", i).text(seacrhArrayElement) );// Creaete a new li for each past search
+            var li = $("<li>")
+            li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
+            $("#searchList").append(li)
+            li.click( ()=>{
+                ReviewBtn(li.target.text);
+            });
         }
     }
     function init() {
@@ -25,15 +30,13 @@ $(document).ready(function () {
         saveSearchToLS(); //put the array into storage
         displayPastSearches(); //put the updated array contents into elements to be displayed
     }
+
     init(); //initialize by putting the stuff in local storage into an array
     // and displaying the contents of the array
 
 
-
-
-
     //---------------------- ajax calls
-    $("#searchReviewsButton").on("click", function (event) {
+    function ReviewBtn(event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
         $("#drinkInfo").empty(); // empties drinks div
@@ -66,9 +69,9 @@ $(document).ready(function () {
                 $(".cardReviews" + [i] + " .card-content").append($("<p>").text("Metacritic Score (out of 100): " + response[i].metacriticScore));
             }
         })
-    });
+    }
 
-    $("#searchDealsButton").on("click", function (event) {
+    function DealsBtn(event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
         event.preventDefault();
@@ -120,11 +123,10 @@ $(document).ready(function () {
                     $("#cocktailImage").attr("style", "width:100%;")
                 });
         })
-    });
-
+    }
+    $("#searchReviewsButton").click( ReviewBtn() );
+    $("#searchDealsButton").click( DealsBtn() );
 });
-
-
 
 
 
