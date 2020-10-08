@@ -38,6 +38,7 @@ function saveToArray() {
 
 //---------------------- ajax calls
 $("#searchReviewsButton").on("click", function (event) {
+    $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
     event.preventDefault();
     if ($("#userGame").val() == "") { // if search input is empty, dont do anything
         return;
@@ -51,10 +52,20 @@ $("#searchReviewsButton").on("click", function (event) {
     }).then(function (response) {
         console.log(response);
         for (var i = 0; i < response.length; i++) {
-            console.log(response[i].title);
-            console.log("Metacritic Score (out of 100): " + response[i].metacriticScore);
-            console.log("Steam Score (out of 100): " + response[i].steamRatingPercent + " (" + response[i].steamRatingText + ")");
-            console.log("---------------------------");
+            $("#reviewsDiv").append($("<div>").addClass("col s12 m7 card cardReviews" + [i]));
+            // $(".cardReviews"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
+            $(".cardReviews" + [i]).append($("<div id=cardHorizontal>").addClass("card horizontal"));
+
+            $(".cardReviews" + [i] + " .card.horizontal").prepend($("<div>").addClass("card-image"));
+            $(".cardReviews" + [i] + " .card-image").prepend($("<img>").addClass("ratingPic").attr("src",response[i].thumb));
+
+            $(".cardReviews" + [i] + " .card.horizontal").append($("<div>").addClass("card-stacked"));
+
+            $(".cardReviews" + [i] + " .card-stacked").prepend($("<div>").addClass("card-content"));
+            $(".cardReviews" + [i] + " .card-content").prepend($("<h5>").text(response[i].title));
+            $(".cardReviews" + [i] + " .card-content").append($("<p>").text("Steam Score (out of 100): " + response[i].steamRatingPercent + " (" + response[i].steamRatingText + ")"));
+            $(".cardReviews" + [i] + " .card-content").append($("<p>").text("___________"));
+            $(".cardReviews" + [i] + " .card-content").append($("<p>").text("Metacritic Score (out of 100): " + response[i].metacriticScore));
         }
     })
 });
