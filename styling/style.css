@@ -12,6 +12,7 @@ body {
 .container {
     min-height: 300px;
     max-width: 60%;
+    border-radius: 5px;
 }
 h1, h2 {
     text-align: center;
@@ -19,15 +20,16 @@ h1, h2 {
 }
 #tagline {
     text-align: center;
-
 }
-.btns {
+.btnsDiv {
     text-align: center;
 }
+
 #userGame {
     background-color: rgb(255, 255, 255);
     border: black;
     border-style: groove;
+    border-radius: 5px;
 }
 footer {
     text-align: center;
@@ -39,7 +41,15 @@ footer {
     width: auto;
 } */
 
-/*Not changing the UI for devices like iPad or Surface Duo*/
+
+@media screen and (max-width: 650px) {
+    .btn{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/*Not changing the UI for devices like iPad or Surface Duo, only for phones*/
 @media screen and (max-width: 420px) {
     h1 {
         font-size: 3.5em;
@@ -48,6 +58,10 @@ footer {
         font-size: 2.5em;
     }
     .container {
-        max-width: 70%;
+        max-width: 75%;
+    }
+    .btn{
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
