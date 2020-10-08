@@ -77,7 +77,6 @@ $(document).ready(function () {
     $("#searchDealsButton").on("click", function (event) {
         $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
-        $("#drinkInfo").empty(); // empties drinks div
         event.preventDefault();
         if ($("#userGame").val() == "") { // if search input is empty, dont do anything
             return;
