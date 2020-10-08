@@ -10,16 +10,12 @@ $(document).ready(function () {
         $("#searchList").empty();//clear the existing text
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
-<<<<<<< HEAD
             var li = $("<li>")
             li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
             $("#searchList").append(li)
-            li.click( ()=>{
-                ReviewBtn(li.target.text);
-            });
-=======
-            $("#searchList").append($("<li>").attr("data-index", i).text(seacrhArrayElement));// Creaete a new li for each past search
->>>>>>> a226106ff21800ff89c2087c737f26f07ef38eee
+            // li.click( (li)=>{   // make the list items clickable so that a search is made with the same input
+            //     ReviewBtn(li.target.text);
+            // });
         }
     }
     function init() {
@@ -131,12 +127,3 @@ $(document).ready(function () {
     $("#searchReviewsButton").click( ReviewBtn() );
     $("#searchDealsButton").click( DealsBtn() );
 });
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
->>>>>>> a226106ff21800ff89c2087c737f26f07ef38eee
