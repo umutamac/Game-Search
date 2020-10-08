@@ -34,7 +34,9 @@ $(document).ready(function () {
 
     //---------------------- ajax calls
     $("#searchReviewsButton").on("click", function (event) {
+        $("#deals").empty(); // empty any elements (cards specifically) already existing in deals div
         $(".reviews").empty(); //empties reviews div for user to be able to more easily see the deals more easily
+        $("#drinkInfo").empty(); // empties drinks div
         event.preventDefault();
         if ($("#userGame").val() == "") { // if search input is empty, dont do anything
             return;
@@ -102,12 +104,20 @@ $(document).ready(function () {
 
                 $("#userGame").val("");
             }
-            var queryURLbeer = "https://prost.herokuapp.com/api/v1/beer/rand"
+            var queryURLbeer = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
                 $.ajax({
                     url: queryURLbeer,
                     method: "GET"
                 }).then(function(responseBeer){
                     console.log(responseBeer);
+                    console.log("Cocktail Name: " + responseBeer.drinks[0].strDrink);
+                    console.log(responseBeer.drinks[0].strDrinkThumb);
+                    $("#drinkInfo").append($("<div id=tryCocktail>"));
+                    $("#tryCocktail").append($("<h5>").text("Try a cocktail with your game!"));
+                    $("#drinkInfo").append("Cocktail Name: " + responseBeer.drinks[0].strDrink);
+                    $("#drinkInfo").append("<img id=cocktailImage>");
+                    $("#cocktailImage").attr("src", responseBeer.drinks[0].strDrinkThumb)
+                    $("#cocktailImage").attr("style", "width:100%;")
                 });
         })
     });
