@@ -1,4 +1,5 @@
-# Game-Search-Engine
+# UT Austin Coding Bootcamp - Full Stack Flex
+# Project 1 - Game-Search-Engine
 
 This is the first project of Full-Stack Coding Bootcamp by UT Austin. The collaborators on this project are Justin Torres (JuTo-Hub), Julian Rivera Jr (julianriverajr) and Umut Alptekin (umutamac).
 
