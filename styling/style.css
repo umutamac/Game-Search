@@ -24,10 +24,10 @@ h1, h2 {
 .btns {
     text-align: center;
 }
-input{
-    background-color: bisque;
+#userGame {
+    background-color: rgb(255, 255, 255);
     border: black;
-    border-style: dashed;
+    border-style: groove;
 }
 footer {
     text-align: center;
