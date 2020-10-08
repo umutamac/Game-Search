@@ -4,6 +4,11 @@ body {
     background-repeat: repeat;
     background-size: 400px;
 }
+.light-blue{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 1px 5px;
+}
 .container {
     min-height: 300px;
     max-width: 60%;
@@ -16,6 +21,9 @@ h1, h2 {
     text-align: center;
 
 }
+.btns {
+    text-align: center;
+}
 footer {
     text-align: center;
     font-weight: bold;
@@ -25,3 +33,16 @@ footer {
     height: 100%;
     width: auto;
 } */
+
+/*Not changing the UI for devices like iPad or Surface Duo*/
+@media screen and (max-width: 420px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+    .container {
+        max-width: 70%;
+    }
+}
