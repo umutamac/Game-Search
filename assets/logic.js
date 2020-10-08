@@ -10,12 +10,16 @@ $(document).ready(function () {
         $("#searchList").empty();//clear the existing text
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
+<<<<<<< HEAD
             var li = $("<li>")
             li.attr("data-index", i).text(seacrhArrayElement) );// Creaete a new li for each past search
             $("#searchList").append(li)
             // a.click((anchor)=>{
             //     searchForCity(anchor.target.text)
             // })
+=======
+            $("#searchList").append($("<li>").attr("data-index", i).text(seacrhArrayElement));// Creaete a new li for each past search
+>>>>>>> 1b076f717af3cf6f99c9f10411ece1ef332951ef
         }
     }
     function init() {
@@ -90,7 +94,7 @@ $(document).ready(function () {
         }).then(function (response2) {
             console.log(searchTerm);
             console.log(response2);
-            for (i = 0; i < 5; i++) { //--- for loop to replace the generating and displaying deals
+            for (i = 0; i < response2.length; i++) { //--- for loop to replace the generating and displaying deals
                 $("#deals").append($("<div>").addClass("col s12 m7 card" + [i]));
                 //$(".card"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
                 $(".card" + [i]).append($("<div>").addClass("card horizontal"));
