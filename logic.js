@@ -31,7 +31,7 @@ $(document).ready(function () {
         saveSearchToLS(); //put the array into storage
         displayPastSearches(); //put the updated array contents into elements to be displayed
     }
-    //init(); //initialize by putting the stuff in local storage into an array
+    init(); //initialize by putting the stuff in local storage into an array
     // and displaying the contents of the array
 
 
