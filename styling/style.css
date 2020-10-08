@@ -13,7 +13,6 @@ body {
     min-height: 300px;
     max-width: 60%;
     border-radius: 5px;
-    background-image: linear-gradient(to bottom right cyan, orange);
 }
 h1, h2 {
     text-align: center;
@@ -33,6 +32,15 @@ h1, h2 {
     border-style: groove;
     border-radius: 5px;
 }
+.reviews {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    
+}
+.deals {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 20px;
+}
 footer {
     text-align: center;
     font-weight: bold;
@@ -41,11 +49,20 @@ footer {
 .past-searches {
     background-color: darkgray;
     text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    border: black;
+    border-style: groove;
+    border-radius: 10px;
 }
-/* .dealPic {
-    height: 100%;
-    width: auto;
-} */
+.card .card-image {
+    min-width: 30%;
+
+}
+.dealPic, .ratingPic {
+    height: 180px;
+    width:180px;
+    min-width: auto;
+}
 
 @media screen and (max-width: 650px) {
     .btn{
