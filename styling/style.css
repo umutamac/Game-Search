@@ -19,10 +19,12 @@ h1, h2 {
 }
 #tagline {
     text-align: center;
-
 }
-.btns {
+.btnsDiv {
     text-align: center;
+}
+.btn{
+    padding: auto 10px;
 }
 #userGame {
     background-color: rgb(255, 255, 255);
@@ -39,7 +41,7 @@ footer {
     width: auto;
 } */
 
-/*Not changing the UI for devices like iPad or Surface Duo*/
+/*Not changing the UI for devices like iPad or Surface Duo, only for phones*/
 @media screen and (max-width: 420px) {
     h1 {
         font-size: 3.5em;
