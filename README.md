@@ -47,7 +47,7 @@ Umut A.
 email:
 
 Justin T.
-email:
+email: justintorres1@outlook.com
 
 Julian R.
 email: julianriverajr@gmail.com
