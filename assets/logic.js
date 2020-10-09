@@ -78,7 +78,7 @@ $(document).ready(function () {
             return;
         }
         saveToArray();
-        //var queryURL = "https://www.cheapshark.com/api/1.0/games?title=" + searchTerm + "&limit=5&exact=0";
+        
         var searchTerm = $("#userGame").val();
         var queryURL2 = "https://www.cheapshark.com/api/1.0/deals?&title=" + searchTerm + "&sortBy=Price&lowerPrice=5&pageSize=5"
         $.ajax({
@@ -89,7 +89,7 @@ $(document).ready(function () {
             console.log(response2);
             for (i = 0; i < response2.length; i++) { //--- for loop to replace the generating and displaying deals
                 $("#deals").append($("<div>").addClass("col s12 m7 card" + [i]));
-                //$(".card"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
+                
                 $(".card" + [i]).append($("<div>").addClass("card horizontal"));
 
                 $(".card" + [i] + " .card.horizontal").prepend($("<div>").addClass("card-image"));
@@ -124,7 +124,7 @@ $(document).ready(function () {
         })
     });
 
-    $("li").on("click", function (event) {
+    $(".past-searches").on("click", function (event) {
         //event.preventDefault();
         $("#userGame").val( $(event.target).text() );
         $("#searchDealsButton").trigger("click");
