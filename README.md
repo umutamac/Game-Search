@@ -11,8 +11,16 @@ Our MVP has following criteria:
     - No alerts, prompts, or confirm windows
     - Implement client-side storage to store persistent data
     - Have a mobile-first UI
+    
+# Technologies Used
 
+We made use of:
+* APIs
+* JavaScript 
+* HTML
+* styled with CSS
 
 Deployed Link: https://umutamac.github.io/Game-Search-Engine/
+
 Github Repository: https://github.com/umutamac/Game-Search-Engine
 
