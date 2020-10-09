@@ -12,7 +12,7 @@ Our MVP has following criteria:
     - Implement client-side storage to store persistent data
     - Have a mobile-first UI
     
-# Technologies Used
+## Technologies Used
 
 We made use of:
 * APIs
@@ -20,7 +20,34 @@ We made use of:
 * HTML
 * styled with CSS
 
+## Screenshots
+
+![main-page-screenshot](./assets/cAndR-Main.png)
+
+
+![reviews-screenshot](./assets/cAndR-Reviews.png)
+
+
+![deals-screenshot](./assets/cAndR-Deals.png)
+
+
+![cocktail-screenshot](./assets/cAndR-cocktail.png)
+
+
+![localStorage-screenshot](./assets/cAndR-localStorage.png)
+
+## Links
+
 Deployed Link: https://umutamac.github.io/Game-Search-Engine/
 
 Github Repository: https://github.com/umutamac/Game-Search-Engine
 
+## Contact Info
+Umut A.
+email:
+
+Justin T.
+email:
+
+Julian R.
+email: julianriverajr@gmail.com
