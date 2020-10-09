@@ -10,16 +10,12 @@ $(document).ready(function () {
         $("#searchList").empty();//clear the existing text
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
-<<<<<<< HEAD
             var li = $("<li>");
             li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
             $("#searchList").append(li);
             // a.click((anchor)=>{
             //     searchForCity(anchor.target.text)
             // })
-=======
-            $("#searchList").append($("<li>").attr("data-index", i).text(seacrhArrayElement));// Creaete a new li for each past search
->>>>>>> 0a55115735e2cf0cd654aa90c142de96d39bd7be
         }
     }
     function init() {
