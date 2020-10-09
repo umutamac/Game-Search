@@ -1,5 +1,5 @@
 # UT Austin Coding Bootcamp - Full Stack Flex
-# Project 1 - Game-Search-Engine
+## Project 1 - Cocktails and Reviews PC Game Search Engine
 
 This is the first project of Full-Stack Coding Bootcamp by UT Austin. The collaborators on this project are Justin Torres (JuTo-Hub), Julian Rivera Jr (julianriverajr) and Umut Alptekin (umutamac).
 
@@ -12,15 +12,17 @@ Our MVP has following criteria:
     - Implement client-side storage to store persistent data
     - Have a mobile-first UI
     
-## Technologies Used
+### Technologies Used
 
 We made use of:
 * APIs
 * JavaScript 
 * HTML
 * styled with CSS
+* Google Fonts
+* Materialize
 
-## Screenshots
+### Screenshots
 
 ![main-page-screenshot](./assets/cAndR-Main.png)
 
@@ -36,13 +38,13 @@ We made use of:
 
 ![localStorage-screenshot](./assets/cAndR-localStorage.png)
 
-## Links
+### Links
 
 Deployed Link: https://umutamac.github.io/Game-Search-Engine/
 
 Github Repository: https://github.com/umutamac/Game-Search-Engine
 
-## Contact Info
+### Contact Info
 Umut A.
 email: amacalptekin@gmail.com
 
