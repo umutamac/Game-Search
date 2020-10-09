@@ -17,6 +17,9 @@ $(document).ready(function () {
             //     searchForCity(anchor.target.text)
             // })
         }
+    }
+    function init() {
+        var storedData = JSON.parse(localStorage.getItem('gamesKey'))
         if (storedData !== null) { //if localstorage in not empty, 
             searchArray = storedData; //make the array equal to storage
         }
