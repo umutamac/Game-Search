@@ -44,7 +44,7 @@ Github Repository: https://github.com/umutamac/Game-Search-Engine
 
 ## Contact Info
 Umut A.
-email:
+email: amacalptekin@gmail.com
 
 Justin T.
 email:
