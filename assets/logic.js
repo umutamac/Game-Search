@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    //var searchTerm = $("#userGame").val();
     var searchArray = [];
 
     function saveSearchToLS() {
@@ -13,9 +12,6 @@ $(document).ready(function () {
             var li = $("<li>");
             li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
             $("#searchList").append(li);
-            // a.click((anchor)=>{
-            //     searchForCity(anchor.target.text)
-            // })
         }
     }
     function init() {
@@ -53,7 +49,7 @@ $(document).ready(function () {
             console.log(response);
             for (var i = 0; i < response.length; i++) {
                 $("#reviewsDiv").append($("<div>").addClass("col s12 m7 card cardReviews" + [i]));
-                // $(".cardReviews"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
+                
                 $(".cardReviews" + [i]).append($("<div id=cardHorizontal>").addClass("card horizontal"));
 
                 $(".cardReviews" + [i] + " .card.horizontal").prepend($("<div>").addClass("card-image"));
@@ -125,7 +121,6 @@ $(document).ready(function () {
     });
 
     $(".past-searches").on("click", function (event) {
-        //event.preventDefault();
         $("#userGame").val( $(event.target).text() );
         $("#searchDealsButton").trigger("click");
     });
