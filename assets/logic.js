@@ -87,7 +87,7 @@ $(document).ready(function () {
         }).then(function (response2) {
             console.log(searchTerm);
             console.log(response2);
-            for (i = 0; i < 5; i++) { //--- for loop to replace the generating and displaying deals
+            for (i = 0; i < response2.length; i++) { //--- for loop to replace the generating and displaying deals
                 $("#deals").append($("<div>").addClass("col s12 m7 card" + [i]));
                 //$(".card"+[i]).prepend($("<h2 class=header>").text("Horizontal Card"));
                 $(".card" + [i]).append($("<div>").addClass("card horizontal"));
