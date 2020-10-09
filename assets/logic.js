@@ -10,12 +10,16 @@ $(document).ready(function () {
         $("#searchList").empty();//clear the existing text
         for (var i = 0; i < 5; i++) { // Display last 5 searches
             var seacrhArrayElement = searchArray[i];
+<<<<<<< HEAD
             var li = $("<li>");
             li.attr("data-index", i).text(seacrhArrayElement);// Creaete a new li for each past search
             $("#searchList").append(li);
             // a.click((anchor)=>{
             //     searchForCity(anchor.target.text)
             // })
+=======
+            $("#searchList").append($("<li>").attr("data-index", i).text(seacrhArrayElement));// Creaete a new li for each past search
+>>>>>>> 0a55115735e2cf0cd654aa90c142de96d39bd7be
         }
     }
     function init() {
@@ -107,20 +111,20 @@ $(document).ready(function () {
                 $("#userGame").val("");
             }
             var queryURLbeer = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-                $.ajax({
-                    url: queryURLbeer,
-                    method: "GET"
-                }).then(function(responseBeer){
-                    console.log(responseBeer);
-                    console.log("Cocktail Name: " + responseBeer.drinks[0].strDrink);
-                    console.log(responseBeer.drinks[0].strDrinkThumb);
-                    $("#drinkInfo").append($("<div id=tryCocktail>"));
-                    $("#tryCocktail").append($("<h5>").text("Try a cocktail with your game!"));
-                    $("#drinkInfo").append("Cocktail Name: " + responseBeer.drinks[0].strDrink);
-                    $("#drinkInfo").append("<img id=cocktailImage>");
-                    $("#cocktailImage").attr("src", responseBeer.drinks[0].strDrinkThumb)
-                    $("#cocktailImage").attr("style", "width:100%;")
-                });
+            $.ajax({
+                url: queryURLbeer,
+                method: "GET"
+            }).then(function (responseBeer) {
+                console.log(responseBeer);
+                console.log("Cocktail Name: " + responseBeer.drinks[0].strDrink);
+                console.log(responseBeer.drinks[0].strDrinkThumb);
+                $("#drinkInfo").append($("<div id=tryCocktail>"));
+                $("#tryCocktail").append($("<h5>").text("Try a cocktail with your game!"));
+                $("#drinkInfo").append("Cocktail Name: " + responseBeer.drinks[0].strDrink);
+                $("#drinkInfo").append("<img id=cocktailImage>");
+                $("#cocktailImage").attr("src", responseBeer.drinks[0].strDrinkThumb)
+                $("#cocktailImage").attr("style", "width:100%;")
+            });
         })
     });
 
@@ -131,11 +135,3 @@ $(document).ready(function () {
     });
 
 });
-
-
-
-
-
-
-
-
