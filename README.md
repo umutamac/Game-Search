@@ -1,5 +1,4 @@
-# UT Austin Coding Bootcamp - Full Stack Flex
-## Project 1 - Cocktails and Reviews PC Game Search Engine
+# Cocktails and Reviews PC Game Search Engine
 
 This is the first project of Full-Stack Coding Bootcamp by UT Austin. The collaborators on this project are Justin Torres (JuTo-Hub), Julian Rivera Jr (julianriverajr) and Umut Alptekin (umutamac).
 
@@ -15,12 +14,11 @@ Our MVP has following criteria:
 ### Technologies Used
 
 We made use of:
-* APIs
-* JavaScript 
-* HTML
-* styled with CSS
+* HTML, CSS, JS
+* Cheapshark API
+* Cocktail DB API
+* Materialize CSS
 * Google Fonts
-* Materialize
 
 ### Screenshots
 
