@@ -1,6 +1,4 @@
-# Cocktails and Reviews PC Game Search Engine
-
-This is the first project of Full-Stack Coding Bootcamp by UT Austin. The collaborators on this project are Justin Torres (JuTo-Hub), Julian Rivera Jr (julianriverajr) and Umut Alptekin (umutamac).
+# Cocktails and Reviews - PC Game Search Engine
 
 The project is aimed at using Cheapshark's API to look at deals on digital games, and the API from The Cocktail DB API to suggest cocktails to go with game. The word user types to find deals are also stored using local storage and displayed for easy re-searching capability.
 
@@ -12,8 +10,6 @@ Our MVP has following criteria:
     - Have a mobile-first UI
     
 ### Technologies Used
-
-We made use of:
 * HTML, CSS, JS
 * Cheapshark API
 * Cocktail DB API
@@ -42,12 +38,12 @@ Deployed Link: https://umutamac.github.io/Game-Search-Engine/
 
 Github Repository: https://github.com/umutamac/Game-Search-Engine
 
-### Contact Info
-Umut A.
+### Contributors
+Umut A. https://github.com/umutamac
 email: amacalptekin@gmail.com
 
-Justin T.
+Justin T. https://github.com/JuTo-Hub
 email: justintorres1@outlook.com
 
-Julian R.
+Julian R. https://github.com/julianriverajr
 email: julianriverajr@gmail.com
