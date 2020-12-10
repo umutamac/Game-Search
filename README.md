@@ -11,6 +11,7 @@ Our MVP has following criteria:
     
 ### Technologies Used
 * HTML, CSS, JS
+* jQuery
 * Cheapshark API
 * Cocktail DB API
 * Materialize CSS
