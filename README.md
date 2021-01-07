@@ -1,13 +1,14 @@
-# Cocktails and Reviews - PC Game Search Engine
+# Cocktails and Reviews 
+## (A PC Game Search Engine)
 
-The project is aimed at using Cheapshark's API to look at deals on digital games, and the API from The Cocktail DB API to suggest cocktails to go with game. The word user types to find deals are also stored using local storage and displayed for easy re-searching capability.
+This project is aimed at using Cheapshark's API to look at deals on digital games, and the API from The Cocktail DB API to suggest cocktails to go with game. The word user types to find deals are also stored using local storage and displayed for easy re-searching capability.
 
 Our MVP has following criteria:
-    - Use at least 2 different server-side API's
-    - Use css framework other than Bootstrap
-    - No alerts, prompts, or confirm windows
-    - Implement client-side storage to store persistent data
-    - Have a mobile-first UI
+- Use at least 2 different server-side API's
+- Use css framework other than Bootstrap
+- No alerts, prompts, or confirm windows
+- Implement client-side storage to store persistent data
+- Have a mobile-first UI
     
 ### Technologies Used
 * HTML, CSS, JS
@@ -40,11 +41,11 @@ Deployed Link: https://umutamac.github.io/Game-Search-Engine/
 Github Repository: https://github.com/umutamac/Game-Search-Engine
 
 ### Contributors
-Umut A. https://github.com/umutamac
-email: amacalptekin@gmail.com
+Umut A. [![GitHub Link](https://img.shields.io/badge/Github-umutamac-lightgrey.svg)](https://github.com/umutamac)<br>
+Email: amacalptekin@gmail.com
 
-Justin T. https://github.com/JuTo-Hub
-email: justintorres1@outlook.com
+Justin T. [![GitHub Link](https://img.shields.io/badge/Github-JuTo--Hub-lightgrey.svg)](https://github.com/JuTo-Hub)<br>
+Email: justintorres1@outlook.com
 
-Julian R. https://github.com/julianriverajr
-email: julianriverajr@gmail.com
+Julian R. [![GitHub Link](https://img.shields.io/badge/Github-julianriverajr-lightgrey.svg)](https://github.com/julianriverajr)<br>
+Email: julianriverajr@gmail.com
