@@ -13,6 +13,7 @@ body {
     min-height: 300px;
     max-width: 60%;
     border-radius: 5px;
+    /* padding: 10px 0px; */
 }
 h1, h2 {
     text-align: center;
@@ -25,6 +26,9 @@ h1, h2 {
 .btnsDiv {
     text-align: center;
     font-family: 'Libre Baskerville', serif;
+}
+.btn {
+    margin: 5px 0px 5px 0px;
 }
 #userGame {
     background-color: rgb(255, 255, 255);
@@ -46,14 +50,6 @@ footer {
     font-weight: bold;
     color: black;
 }
-.past-searches {
-    background-color: darkgray;
-    text-align: center;
-    font-family: 'Libre Baskerville', serif;
-    border: black;
-    border-style: groove;
-    border-radius: 10px;
-}
 .card .card-image {
     min-width: 30%;
 
@@ -63,7 +59,14 @@ footer {
     width:180px;
     min-width: auto;
 }
-
+.pastSearches {
+    background: linear-gradient(to bottom right, yellow, blue);
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    border: black;
+    border-style: groove;
+    border-radius: 10px;
+}
 @media screen and (max-width: 650px) {
     .btn{
         padding-left: 5px;
